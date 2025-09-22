@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Adicionar Categoria{% endblock %}
+
+{% block content %}
+<h1>Cadastro de Categorias de Café</h1>
+<h2>Nova Categoria</h2>
+
+<form method="POST">
+    <input type="text" name="nome" placeholder="Nome da Categoria" required>
+    <br>
+    <button type="submit">Salvar</button>
+    <a href="{{ url_for('index') }}">Cancelar</a>
+</form>
+{% endblock %}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Cadastro de Categorias de Café{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+            text-align: center;
+            min-width: 400px;
+        }
+        h1 { color: #2c0602ff; margin-bottom: 20px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        h2 { color: #2c0602ff; margin-bottom: 14px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        
+        a, button {
+            background: #2c06027b;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            margin: 5px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        a:hover, button:hover {
+            background: #45a049;
+        }
+        input[type="text"] {
+            padding: 8px;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <script>
+        // Bloqueia seleção de texto
+        document.addEventListener("selectstart", (e) => e.preventDefault());
+        // Bloqueia clique direito (opcional)
+        document.addEventListener("contextmenu", (e) => e.preventDefault());        
+    </script>
+
+</body>
+</html>

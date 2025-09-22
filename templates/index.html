@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Cadastro de Categorias de Café{% endblock %}
+
+{% block content %}
+<h1>Cadastro de Categorias de Café (LISTAGEM)</h1>
+<br>
+
+<a href="{{ url_for('adicionar') }}">+ Adicionar Categoria</a> <br><br>
+
+<table> <!--Insere uma tabela para listar as categorias -->
+    <thead> <!-- Trabalhando com o cabeçalho e nomes das colunas-->
+        <tr>
+            <th>ID</th> <!--Inserindo nomes para as colunas-->
+            <th>Nome</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    {% for cat in categorias %} <!--efetuando um loop para listar as categorias-->
+        <tr>
+            <td>{{ cat[0] }}</td> <!--Inserindo a coluna 0 que é o ID-->
+            <td>{{ cat[1] }}</td> <!--Inserindo a coluna 1 que é o nome da categoria-->
+            <td>
+                <a href="{{ url_for('editar', id=cat[0]) }}">Editar</a> <!--Adicionando links para exercer a função de alteração ou edição-->
+                <a href="{{ url_for('excluir', id=cat[0]) }}" onclick="return confirm('Excluir a Categoria: {{ cat[1] }}?')">Excluir</a> <!--Adicionando links para exercer a função de exclusão-->
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
